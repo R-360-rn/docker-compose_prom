@@ -27,7 +27,7 @@ services:
     image: prom/prometheus:v2.14.0
     volumes:
       - ./prometheus/:/etc/prometheus/
-      - prometheus1_vol:/prometheus
+      - prometheus2_vol:/prometheus
     command:
       - '--config.file=/etc/prometheus/prometheus2.yml'
       - '--storage.tsdb.path=/prometheus'
