@@ -9,10 +9,10 @@ services:
   prometheus1:
     image: prom/prometheus:v2.14.0
     volumes:
-      - ./prometheus/:/etc/prometheus
+      - ./prometheus/:/etc/prometheus/
       - prometheus1_vol:/prometheus
     command:
-      - '--config.file=/etc/prometheus/prometheus1.yaml'
+      - '--config.file=/etc/prometheus/prometheus1.yml'
       - '--storage.tsdb.path=/prometheus'
       - '--storage.tsdb.max-block-duration=2h'
       - '--storage.tsdb.min-block-duration=2h'
@@ -26,10 +26,10 @@ services:
   prometheus2:
     image: prom/prometheus:v2.14.0
     volumes:
-      - ./prometheus/:/etc/prometheus
+      - ./prometheus/:/etc/prometheus/
       - prometheus1_vol:/prometheus
     command:
-      - '--config.file=/etc/prometheus/prometheus2.yaml'
+      - '--config.file=/etc/prometheus/prometheus2.yml'
       - '--storage.tsdb.path=/prometheus'
       - '--storage.tsdb.max-block-duration=2h'
       - '--storage.tsdb.min-block-duration=2h'
