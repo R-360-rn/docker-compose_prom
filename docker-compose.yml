@@ -39,6 +39,7 @@ services:
     ports:
       - 9082:9090
     restart: always
+
   node-exporter:
     image: prom/node-exporter:v0.18.1
     volumes:
@@ -84,7 +85,7 @@ services:
       - prometheus1
     restart: always
   
-querier:
+  querier:
     image: quay.io/thanos/thanos:v0.8.1
     command:
       - 'query'
