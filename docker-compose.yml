@@ -160,3 +160,28 @@ services:
     depends_on:
       - grafana1
       - grafana2
+
+  influxdb:
+    image: influxdb
+    ports:
+      - 8086:8086
+      - 8083:8083
+    volumes:
+      - ./influxdb:/var/lib/influxdb
+    environment:
+      INFLUXDB_DB: influxdb_db
+      INFLUXDB_ADMIN_USER: admin
+      INFLUXDB_ADMIN_PASSWORD: password
+      NFLUXDB_ADMIN_ENABLED: "true"
+    restart: always
+
+  telegraf:
+    image: telegraf
+    volumes:
+      - ./telegraf/telegraf.conf:/etc/telegraf/telegraf.conf:ro
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
+    restart: always
+    depends_on:
+      - influxdb
