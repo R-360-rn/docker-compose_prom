@@ -109,7 +109,7 @@ services:
       - prometheus1
       - prometheus2
     ports:
-      - 3000:3000
+      - 3001:3000
     volumes:
       - grafana_data:/var/lib/grafana
       - ./grafana/provisioning/:/etc/grafana/provisioning/
@@ -124,7 +124,7 @@ services:
       - prometheus1
       - prometheus2
     ports:
-      - 3000:3000
+      - 3002:3000
     volumes:
       - grafana_data:/var/lib/grafana
       - ./grafana/provisioning/:/etc/grafana/provisioning/
