@@ -134,14 +134,15 @@ services:
 
   postgres:
     image: postgres
-    restart: always
+    ports: 5432:5432
     environment:
       POSTGRES_USER: grafanadbuser
       POSTGRES_PASSWORD: grafanadbpassword
       POSTGRES_DB: grafana
+    restart: always
 
   adminer:
     image: adminer
-    restart: always
     ports:
       - 8080:8080
+    restart: always
