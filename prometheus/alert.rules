@@ -20,10 +20,3 @@ groups:
     annotations:
       summary: "Instance {{ $labels.instance }} under high load"
       description: "{{ $labels.instance }} of job {{ $labels.job }} is under high load."
-
-  - alert: TestUpTime
-      expr: sum(time() - node_boot_time_seconds{instance=~"$node"}) > 1
-      for: 10m
-      annotations:
-        summary: "Uptime is { sum(time() - node_boot_time_seconds{instance=~"$node"}) }"
-        description: "{{ $labels.instance }} has a median request latency above 1s (current value: {{ $value }}s)"
