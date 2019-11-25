@@ -51,7 +51,6 @@ receivers:
     name: 'slack'
     slack_configs:
     # Whether or not to notify about resolved alerts.
-    send_resolved: true
     # The Slack webhook URL.
     api_url: https://hooks.slack.com/services/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
 
@@ -79,15 +78,15 @@ receivers:
     # [ http_config: <http_config> | default = global.http_config ]
 
 
-global:
-  slack_api_url: 'https://hooks.slack.com/services/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'
+# global:
+#   slack_api_url: 'https://hooks.slack.com/services/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'
 
-route:
-  receiver: 'slack-notifications'
-  group_by: [alertname, cluster]
+# route:
+#   receiver: 'slack-notifications'
+#   group_by: [alertname, cluster]
 
-receivers:
-- name: 'slack-notifications'
-  slack_configs:
-  - channel: '#prom-graf-than'
-    text: 'https://internal.myorg.net/wiki/alerts/{{ .GroupLabels.app }}/{{ .GroupLabels.alertname }}'
+# receivers:
+# - name: 'slack-notifications'
+#   slack_configs:
+#   - channel: '#prom-graf-than'
+#     text: 'https://internal.myorg.net/wiki/alerts/{{ .GroupLabels.app }}/{{ .GroupLabels.alertname }}'
