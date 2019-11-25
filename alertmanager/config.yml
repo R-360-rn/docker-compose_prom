@@ -80,7 +80,7 @@ receivers:
 
 
 global:
-  slack_api_url: 'https://hooks.slack.com/services/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'
+  slack_api_url: 'https://hooks.slack.com/services/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'
 
 route:
   receiver: 'slack-notifications'
