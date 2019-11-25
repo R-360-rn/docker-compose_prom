@@ -79,3 +79,15 @@ receivers:
     # [ http_config: <http_config> | default = global.http_config ]
 
 
+global:
+  slack_api_url: 'https://hooks.slack.com/services/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'
+
+route:
+  receiver: 'slack-notifications'
+  group_by: [alertname, cluster]
+
+receivers:
+- name: 'slack-notifications'
+  slack_configs:
+  - channel: '#prom-graf-than'
+    text: 'https://internal.myorg.net/wiki/alerts/{{ .GroupLabels.app }}/{{ .GroupLabels.alertname }}'

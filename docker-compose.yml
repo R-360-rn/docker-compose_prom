@@ -105,7 +105,6 @@ services:
       - '--query.replica-label=replica'
       - '--store=sidecar1:10091'
       - '--store=sidecar2:10091'
-#      - '--store=thanos-store-gateway:10091'
     ports:
       - 10902:10902
     depends_on:
