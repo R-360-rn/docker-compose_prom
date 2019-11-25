@@ -22,7 +22,7 @@ groups:
       description: "{{ $labels.instance }} of job {{ $labels.job }} is under high load."
 
   - alert: InstanceDown
-    expr: up == 0
+    expr: up == 1
     for: 1m
     labels:
       severity: "critical"
