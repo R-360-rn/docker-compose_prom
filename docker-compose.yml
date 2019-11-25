@@ -40,6 +40,17 @@ services:
       - 9082:9090
     restart: always
 
+  alertmanager:
+    image: prom/alertmanager
+    volumes:
+      - ./alertmanager/config.yml:/etc/alertmanager/config.yml
+    ports:
+      - 9093:9093
+    restart: always
+    depends_on:
+      - prometheus1
+      - prometheus2
+
   node-exporter:
     image: prom/node-exporter:v0.18.1
     volumes:
