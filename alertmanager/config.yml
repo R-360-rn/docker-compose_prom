@@ -52,7 +52,7 @@ receivers:
     # The channel or user to send notifications to.
     - channel: '#prom-graf-than'
       # Whether or not to notify about resolved alerts.
-      send_resolved: 'true'
+      send_resolved: true
       # The Slack webhook URL.
       api_url: https://hooks.slack.com/services/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
       # API request data as defined by the Slack webhook API.
