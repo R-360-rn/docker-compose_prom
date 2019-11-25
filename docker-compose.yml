@@ -46,6 +46,9 @@ services:
       - ./alertmanager/config.yml:/etc/alertmanager/config.yml
     ports:
       - 9093:9093
+    command:
+      - '--config.file=/etc/alertmanager/config.yml'
+      - '--storage.path=/alertmanager'
     restart: always
     depends_on:
       - prometheus1
