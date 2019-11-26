@@ -78,7 +78,7 @@ datasources:
   isDefault: false
   # <map> fields that will be converted to json and stored in json_data
   jsonData:
-    httpMode: GET
+     httpMode: GET
      graphiteVersion: "1.1"
      tlsAuth: false
      tlsAuthWithCACert: false
