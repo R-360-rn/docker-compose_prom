@@ -12,14 +12,14 @@ datasources:
   isDefault: true
   editable: true
 
-  - name: InfluxDB
-    type: influxdb
-    access: proxy
-    database: influxdb_db
-    user: admin
-    url: http://docker-compose_prom_influxdb_1:8086
-    jsonData:
-      httpMode: GET
-    secureJsonData:
-      password: password
-    editable: true
+- name: InfluxDB
+  type: influxdb
+  access: proxy
+  database: influxdb_db
+  user: admin
+  url: http://docker-compose_prom_influxdb_1:8086
+  jsonData:
+    httpMode: GET
+  secureJsonData:
+    password: password
+  editable: true
